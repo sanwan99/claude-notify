@@ -224,17 +224,6 @@ claude_success "任务完成" "所有数据已处理"
 claude_error "操作失败" "数据库连接超时"
 ```
 
-### 与 CI/CD 集成
-
-```bash
-# 在构建脚本中
-npm run build
-if [ $? -eq 0 ]; then
-    ./claude-notify.sh success "构建成功" "前端资源已编译"
-else
-    ./claude-notify.sh error "构建失败" "请检查错误日志"
-fi
-```
 
 ## 🔧 工作原理
 
@@ -292,19 +281,21 @@ Windows 10/11 弹出 Toast 通知
 
 ```
 claude-notify/
-├── 📜 核心脚本
-│   ├── interactive-notify.sh      # 主通知脚本
-│   ├── claude-notify.sh          # Claude 集成脚本
-│   ├── claude-shortcuts.sh       # 快捷函数库
-│   ├── toast-notify.ps1          # PowerShell 实现
-│   └── simple-notify.sh          # 降级方案（消息框）
-├── 🔧 安装工具
-│   ├── install.sh                # 一键安装脚本
-│   └── install-burnttoast.ps1    # BurntToast 安装脚本
-├── 🎨 资源文件
-│   └── icons/                    # 预设图标（success/warning/error/info）
-└── 📋 模板
-    └── CLAUDE.md.example        # CLAUDE.md 示例模板
+├── interactive-notify.sh      # 主通知脚本，支持全参数
+├── claude-notify.sh          # Claude 集成脚本  
+├── claude-shortcuts.sh       # 快捷函数库
+├── toast-notify.ps1          # PowerShell BurntToast 实现
+├── simple-notify.sh          # 降级方案（消息框）
+├── install.sh               # 一键安装脚本
+├── install-burnttoast.ps1   # BurntToast 模块安装
+├── icons/                   # 通知图标
+│   ├── success.png
+│   ├── error.png
+│   ├── warning.png
+│   └── info.png
+├── CLAUDE.md.example        # CLAUDE.md 模板示例
+├── README.md               # 本文档
+└── LICENSE                 # MIT 许可证
 ```
 
 ## 🤝 贡献
