@@ -2,6 +2,8 @@
 
 **再也不用盯着屏幕等 Claude 跑完任务了！**
 
+⚠️ **适用环境**：此项目专为 Windows + WSL 环境下使用 Claude Code 的用户设计。
+
 当 Claude 在处理耗时任务时，你可以去泡咖啡、处理邮件或专注其他工作。任务完成时，Windows 会弹出通知提醒你回来查看结果。
 
 ![Claude Notify Demo](https://github.com/sanwan99/claude-notify/assets/demo.gif)
