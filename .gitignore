@@ -1,0 +1,49 @@
+# Claude Code 本地配置
+.claude/
+settings.local.json
+
+# 临时文件
+*.tmp
+*.temp
+*~
+.DS_Store
+Thumbs.db
+
+# 日志文件
+*.log
+logs/
+
+# PowerShell 相关
+*.ps1xml
+profile.ps1
+
+# 测试输出
+test-output/
+*.test
+
+# 系统文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Windows 相关
+desktop.ini
+$RECYCLE.BIN/
+
+# WSL 相关
+.wslconfig
+
+# 备份文件
+*.bak
+*.backup
+*.old
+
+# 个人配置文件
+local-config.sh
+personal-settings.json
+
+# 项目特定忽略
+# 可能包含敏感路径信息的临时脚本
+temp-*.sh
+temp-*.ps1
