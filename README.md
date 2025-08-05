@@ -100,7 +100,7 @@ NOTIFY_PATH=/mnt/e/wsl/claude-notify
 - 修改 `NOTIFY_PATH` 为你的实际路径
 - 如果已有 CLAUDE.md，把这段加在最顶部
 
-📌 **提示**：也可以直接复制 `claude-notify/CLAUDE.md.template` 到你的项目根目录并修改路径。
+📌 **提示**：也可以直接复制 `claude-notify/CLAUDE.md.example` 到你的项目根目录并修改路径。
 
 ### 方法 2：在对话开始时设定
 在与 Claude 对话的开始，明确告诉它：
@@ -292,19 +292,24 @@ Windows 10/11 弹出 Toast 通知
 
 ```
 claude-notify/
-├── 📜 脚本文件
-│   ├── install.sh                 # 一键安装脚本
+├── 📜 核心脚本
 │   ├── interactive-notify.sh      # 主通知脚本
 │   ├── claude-notify.sh          # Claude 集成脚本
 │   ├── claude-shortcuts.sh       # 快捷函数库
-│   └── toast-notify.ps1          # PowerShell 实现
+│   ├── toast-notify.ps1          # PowerShell 实现
+│   └── simple-notify.sh          # 降级方案（消息框）
+├── 🔧 安装工具
+│   ├── install.sh                # 一键安装脚本
+│   └── install-burnttoast.ps1    # BurntToast 安装脚本
 ├── 🎨 资源文件
-│   └── icons/                    # 预设图标
+│   └── icons/                    # 预设图标（success/warning/error/info）
 ├── 📚 文档
-│   ├── README.md                 # 本文档
-│   └── CLAUDE-INTEGRATION.md     # Claude 集成详细说明
+│   ├── README.md                 # 主文档
+│   ├── QUICKSTART.md            # 快速使用指南
+│   ├── CLAUDE-INTEGRATION.md    # Claude 集成说明
+│   └── CLAUDE.md.example        # CLAUDE.md 模板
 └── 🧪 测试
-    └── simple-test.bat           # 快速测试脚本
+    └── simple-test.bat          # Windows 快速测试
 ```
 
 ## 🤝 贡献
