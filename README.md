@@ -303,10 +303,6 @@ claude-notify/
 │   └── install-burnttoast.ps1    # BurntToast 安装脚本
 ├── 🎨 资源文件
 │   └── icons/                    # 预设图标（success/warning/error/info）
-├── 📚 文档
-│   ├── README.md                 # 主文档
-│   ├── QUICKSTART.md            # 快速使用指南
-│   └── CLAUDE-INTEGRATION.md    # Claude 集成说明
 └── 📋 模板
     └── CLAUDE.md.example        # CLAUDE.md 示例模板
 ```
