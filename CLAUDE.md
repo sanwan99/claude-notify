@@ -249,3 +249,23 @@ claude_error "测试失败" "${failed_tests} 个测试用例失败，请检查�
 - 所有通知都支持中文显示，编码已优化处理
 
 **📞 快速支持**: 如有问题，可查看完整文档 `README.md` 或集成指南 `CLAUDE-INTEGRATION.md`
+
+## 🔔 自动通知规则
+
+### 任务完成时自动通知
+当我完成以下任务时，会自动发送通知：
+
+1. **代码任务完成**：
+   ```bash
+   /mnt/e/wsl/claude-notify/claude-notify.sh success "任务完成" "具体描述"
+   ```
+
+2. **遇到错误时**：
+   ```bash
+   /mnt/e/wsl/claude-notify/claude-notify.sh error "任务失败" "错误描述"
+   ```
+
+3. **需要确认时**：
+   ```bash
+   /mnt/e/wsl/claude-notify/claude-notify.sh warning "需要确认" "操作描述"
+   ```
