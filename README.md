@@ -6,8 +6,8 @@
 
 ### 1. 克隆项目
 ```bash
-git clone https://github.com/your-username/win-notify.git
-cd win-notify
+git clone https://github.com/your-username/claude-notify.git
+cd claude-notify
 ```
 
 ### 2. 安装配置
@@ -25,7 +25,7 @@ chmod +x *.sh
 ```
 
 ### 3. Claude Code 集成配置
-将项目路径中的 `<PROJECT_PATH>` 替换为你的实际项目路径，例如 `/home/user/win-notify`。
+将项目路径中的 `<PROJECT_PATH>` 替换为你的实际项目路径，例如 `/home/user/claude-notify`。
 
 ## ✨ 功能特性
 
