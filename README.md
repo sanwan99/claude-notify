@@ -54,15 +54,17 @@ cd claude-notify
 **注意**：将 `/path/to/claude-notify` 替换为你实际的项目路径！
 
 ### 4️⃣ 设置自动通知规则（别忘了这步！）
-在你的项目根目录创建 `CLAUDE.md` 文件：
+在你的项目根目录创建或编辑 `CLAUDE.md` 文件，在**最前面**添加通知规则：
 
 ```bash
-# 复制模板文件
-cp /path/to/claude-notify/CLAUDE.md.template ./CLAUDE.md
+# 如果是新项目，复制模板
+cp /path/to/claude-notify/CLAUDE.md.example ./CLAUDE.md
 
-# 编辑文件，修改通知脚本路径
+# 编辑文件，确保通知规则在最前面
 nano CLAUDE.md
 ```
+
+⚠️ **重要**：通知规则必须放在 CLAUDE.md 的**最顶部**！
 
 🎉 **完成！** 现在 Claude 会在任务完成时自动通知你了！
 
@@ -71,11 +73,9 @@ nano CLAUDE.md
 ⚠️ **很多用户忽略了这一步！** 配置权限后，Claude 有了调用通知脚本的**能力**，但还需要告诉它**什么时候**调用。
 
 ### 方法 1：创建 CLAUDE.md（强烈推荐）
-**这是最关键的一步！** 在你的项目根目录创建 `CLAUDE.md` 文件：
+**这是最关键的一步！** 在你的项目根目录创建 `CLAUDE.md` 文件，把以下内容放在文件**最前面**：
 
 ```markdown
-# CLAUDE.md - 项目通知规则
-
 ## 通知脚本位置
 NOTIFY_PATH=/mnt/e/wsl/claude-notify
 
@@ -94,6 +94,11 @@ NOTIFY_PATH=/mnt/e/wsl/claude-notify
 
 **重要：这是必须执行的规则，每次都要执行，不要等待提醒。**
 ```
+
+⚠️ **关键提示**：
+- 这段规则必须放在 CLAUDE.md 文件的**最前面**
+- 修改 `NOTIFY_PATH` 为你的实际路径
+- 如果已有 CLAUDE.md，把这段加在最顶部
 
 📌 **提示**：也可以直接复制 `claude-notify/CLAUDE.md.template` 到你的项目根目录并修改路径。
 
