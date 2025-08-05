@@ -306,10 +306,9 @@ claude-notify/
 ├── 📚 文档
 │   ├── README.md                 # 主文档
 │   ├── QUICKSTART.md            # 快速使用指南
-│   ├── CLAUDE-INTEGRATION.md    # Claude 集成说明
-│   └── CLAUDE.md.example        # CLAUDE.md 模板
-└── 🧪 测试
-    └── simple-test.bat          # Windows 快速测试
+│   └── CLAUDE-INTEGRATION.md    # Claude 集成说明
+└── 📋 模板
+    └── CLAUDE.md.example        # CLAUDE.md 示例模板
 ```
 
 ## 🤝 贡献

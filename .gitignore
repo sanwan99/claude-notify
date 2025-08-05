@@ -46,4 +46,4 @@ personal-settings.json
 # 项目特定忽略
 # 可能包含敏感路径信息的临时脚本
 temp-*.sh
-temp-*.ps1
+temp-*.ps1CLAUDE.md
