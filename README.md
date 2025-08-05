@@ -20,7 +20,7 @@
 - 🔔 需要确认时发送醒目通知
 - 🎨 不同类型任务使用不同图标和音效
 
-## 🚀 30秒快速开始
+## 🚀 快速开始（4步完成）
 
 ### 1️⃣ 克隆项目
 ```bash
@@ -53,34 +53,46 @@ cd claude-notify
 
 **注意**：将 `/path/to/claude-notify` 替换为你实际的项目路径！
 
-🎉 **完成！** 现在 Claude **可以**调用通知脚本了！
+### 4️⃣ 设置自动通知规则（别忘了这步！）
+在你的项目根目录创建 `CLAUDE.md` 文件：
 
-## 🤖 如何让 Claude 自动通知
+```bash
+# 复制模板文件
+cp /path/to/claude-notify/CLAUDE.md.template ./CLAUDE.md
 
-配置权限后，Claude 有了调用通知脚本的**能力**，但还需要告诉它**什么时候**调用。有以下几种方法：
+# 编辑文件，修改通知脚本路径
+nano CLAUDE.md
+```
 
-### 方法 1：创建 CLAUDE.md（推荐）
-在你的项目根目录创建 `CLAUDE.md` 文件，设置自动通知规则：
+🎉 **完成！** 现在 Claude 会在任务完成时自动通知你了！
+
+## 🤖 如何让 Claude 自动通知（重要！）
+
+⚠️ **很多用户忽略了这一步！** 配置权限后，Claude 有了调用通知脚本的**能力**，但还需要告诉它**什么时候**调用。
+
+### 方法 1：创建 CLAUDE.md（强烈推荐）
+**这是最关键的一步！** 在你的项目根目录创建 `CLAUDE.md` 文件：
 
 ```markdown
 # 项目自动通知规则
 
+## 🔔 自动通知配置
+
 当你完成以下任务时，请自动发送通知：
 
 1. **任务完成时**：
-   - 执行：`/path/to/claude-notify/claude-notify.sh success "任务名称" "完成描述"`
-   - 包括：代码生成、数据分析、文件处理、构建部署等
+   执行：`/mnt/e/wsl/claude-notify/claude-notify.sh success "任务名称" "完成描述"`
 
 2. **任务失败时**：
-   - 执行：`/path/to/claude-notify/claude-notify.sh error "任务名称" "错误描述"`
-   - 包括：编译错误、测试失败、异常情况等
+   执行：`/mnt/e/wsl/claude-notify/claude-notify.sh error "任务名称" "错误描述"`
 
 3. **需要确认时**：
-   - 执行：`/path/to/claude-notify/claude-notify.sh warning "需要确认" "具体内容"`
-   - 包括：危险操作、重要决策、需要人工介入等
+   执行：`/mnt/e/wsl/claude-notify/claude-notify.sh warning "需要确认" "具体内容"`
 
-注意：将 /path/to/claude-notify 替换为实际路径
+注意：将路径替换为你的实际 claude-notify 安装路径（使用绝对路径！）
 ```
+
+📌 **提示**：也可以直接复制 `claude-notify/CLAUDE.md.template` 到你的项目根目录并修改路径。
 
 ### 方法 2：在对话开始时设定
 在与 Claude 对话的开始，明确告诉它：
