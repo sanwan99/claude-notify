@@ -1,6 +1,6 @@
 # ⚡ Claude Notify 快速使用指南
 
-本指南帮助你在 **2 分钟内** 完成 Claude Notify 的安装和配置。
+本指南帮助你在 **3 分钟内** 完成 Claude Notify 的安装和配置，让 Claude 自动通知你任务完成状态。
 
 ## 🎯 一句话说明
 
@@ -12,7 +12,7 @@ Claude Notify 让 Claude 在完成任务时通过 Windows 通知提醒你，不�
 - ✅ Claude Code CLI 已安装
 - ✅ 基本的命令行使用经验
 
-## 🚀 三步完成安装
+## 🚀 四步完成安装
 
 ### 第 1 步：克隆并安装
 
@@ -75,6 +75,26 @@ EOF
 ```
 
 如果看到 Windows 通知弹出，说明配置成功！
+
+## 🤖 第 4 步：让 Claude 自动通知（重要！）
+
+配置权限后，还需要告诉 Claude **什么时候**发送通知。推荐使用 CLAUDE.md：
+
+```bash
+# 在你的项目根目录
+cp /path/to/claude-notify/CLAUDE.md.template ./CLAUDE.md
+
+# 编辑 CLAUDE.md，修改通知脚本路径
+nano CLAUDE.md
+```
+
+或者简单地在对话开始时告诉 Claude：
+
+```
+"从现在开始，完成任务后请用 /path/to/claude-notify/claude-notify.sh 通知我"
+```
+
+这样 Claude 就会在任务完成时自动发送通知了！
 
 ## 🎨 常用通知命令
 
