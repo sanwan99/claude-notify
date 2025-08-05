@@ -74,22 +74,25 @@ nano CLAUDE.md
 **这是最关键的一步！** 在你的项目根目录创建 `CLAUDE.md` 文件：
 
 ```markdown
-# 项目自动通知规则
+# CLAUDE.md - 项目通知规则
 
-## 🔔 自动通知配置
+## 通知脚本位置
+NOTIFY_PATH=/mnt/e/wsl/claude-notify
 
-当你完成以下任务时，请自动发送通知：
+## 自动通知规则
 
-1. **任务完成时**：
-   执行：`/mnt/e/wsl/claude-notify/claude-notify.sh success "任务名称" "完成描述"`
+你必须在以下情况执行通知：
 
-2. **任务失败时**：
-   执行：`/mnt/e/wsl/claude-notify/claude-notify.sh error "任务名称" "错误描述"`
+1. **完成任务后立即执行**：
+   `$NOTIFY_PATH/claude-notify.sh success "任务完成" "描述"`
 
-3. **需要确认时**：
-   执行：`/mnt/e/wsl/claude-notify/claude-notify.sh warning "需要确认" "具体内容"`
+2. **遇到错误时立即执行**：
+   `$NOTIFY_PATH/claude-notify.sh error "任务失败" "错误信息"`
 
-注意：将路径替换为你的实际 claude-notify 安装路径（使用绝对路径！）
+3. **需要确认时立即执行**：
+   `$NOTIFY_PATH/claude-notify.sh warning "需要确认" "确认内容"`
+
+**重要：这是必须执行的规则，每次都要执行，不要等待提醒。**
 ```
 
 📌 **提示**：也可以直接复制 `claude-notify/CLAUDE.md.template` 到你的项目根目录并修改路径。
@@ -316,6 +319,13 @@ claude-notify/
 - 📱 移动端通知支持
 
 ## ❓ 常见问题
+
+**Q: Claude 不自动发送通知怎么办？**  
+A: 最常见的原因和解决方法：
+1. **检查 CLAUDE.md 文件**：确保在项目根目录，且使用绝对路径
+2. **规则要明确**：使用"你必须"而不是"请"，Claude 对指令式语言响应更好
+3. **测试命令**：先让 Claude 手动执行一次通知命令，确认路径正确
+4. **重新开始对话**：有时需要新对话才能加载 CLAUDE.md 规则
 
 **Q: BurntToast 模块安装失败怎么办？**  
 A: 以管理员权限运行 PowerShell，执行：

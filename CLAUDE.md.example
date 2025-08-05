@@ -1,0 +1,19 @@
+# CLAUDE.md - 项目通知规则
+
+## 通知脚本位置
+NOTIFY_PATH=/mnt/e/wsl/claude-notify
+
+## 自动通知规则
+
+你必须在以下情况执行通知：
+
+1. **完成任务后**：
+   `$NOTIFY_PATH/claude-notify.sh success "任务完成" "描述"`
+
+2. **遇到错误时**：
+   `$NOTIFY_PATH/claude-notify.sh error "任务失败" "错误信息"`
+
+3. **需要确认时**：
+   `$NOTIFY_PATH/claude-notify.sh warning "需要确认" "确认内容"`
+
+**这是必须执行的规则，不是建议。**
